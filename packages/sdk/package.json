@@ -1,0 +1,55 @@
+{
+  "name": "@flowcore/sdk",
+  "version": "0.1.0",
+  "private": false,
+  "description": "FlowCore connector SDK for building integrations",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./connector": {
+      "types": "./src/connector.ts",
+      "import": "./dist/connector.js"
+    },
+    "./auth": {
+      "types": "./src/auth.ts",
+      "import": "./dist/auth.js"
+    },
+    "./action": {
+      "types": "./src/action.ts",
+      "import": "./dist/action.js"
+    },
+    "./trigger": {
+      "types": "./src/trigger.ts",
+      "import": "./dist/trigger.js"
+    },
+    "./http": {
+      "types": "./src/http.ts",
+      "import": "./dist/http.js"
+    },
+    "./errors": {
+      "types": "./src/errors.ts",
+      "import": "./dist/errors.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/ --max-warnings 0",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@flowcore/types": "workspace:*",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "keywords": ["flowcore", "connector", "sdk", "automation", "workflow"],
+  "license": "Apache-2.0"
+}
